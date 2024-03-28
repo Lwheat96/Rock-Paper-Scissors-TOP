@@ -1,0 +1,8 @@
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(200, 200, 200, .7);
+    border-radius: 10%;
+    max-width: 100%;
+}
