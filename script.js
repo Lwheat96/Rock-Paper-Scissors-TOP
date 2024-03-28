@@ -7,19 +7,17 @@ console.log(add2(2));
 // Tried a lot of things at this point. Do I need a param? Do I need to assign Rock / Paper / Scissors to a value?
 
 function getComputerChoice() {
-    Math.floor(Math.random() * 3);
+    Math.floor(Math.random() * 2);
     
-    if (Math.floor(Math.random() *3) === 0){
+    if (Math.floor(Math.random() * 2) === 0){
         return 'Rock';
-    } else {};
-    if (Math.floor(Math.random() *3) === 1){
+    };
+    if (Math.floor(Math.random() * 2) === 1){
         return 'Paper';
-    } else {};
-    if (Math.floor(Math.random() *3) === 2){
+    };
+    if (Math.floor(Math.random() * 2) === 2){
         return 'Scissors';
-    } else{};
-   
-
+    };
 }
 
-console.log(getComputerChoice())
+console.log(getComputerChoice(1))
