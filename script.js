@@ -5,12 +5,9 @@ function add2(num) {
 
 console.log(add2(2));
 // Tried a lot of things at this point. Do I need a param? Do I need to assign Rock / Paper / Scissors to a value?
-
-function getComputerChoice() {
-    let Rock = 1
-    let Paper = 2
-    let Scissors = 3
-    Math.floor(Math.random() + 3)
+const Choice = "Rock" | "Paper" | "Scissors";
+function getComputerChoice(Choice) {
+    return Choice
 }
 
-console.log(getComputerChoice())
+console.log(getComputerChoice(Choice))
