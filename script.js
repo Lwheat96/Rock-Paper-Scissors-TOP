@@ -5,19 +5,20 @@ function add2(num) {
 
 console.log(add2(2));
 // Tried a lot of things at this point. Do I need a param? Do I need to assign Rock / Paper / Scissors to a value?
+// Thank you guys this part is working now!!! 
 
 function getComputerChoice() {
-    Math.floor(Math.random() * 3);
+    let randomNum = Math.floor(Math.random() * 3);
     
-    if (Math.floor(Math.random() * 3) === 0){
-        return 'Rock';
-    };
-    if (Math.floor(Math.random() * 3) === 1){
-        return 'Paper';
-    };
-    if (Math.floor(Math.random() * 3) === 2){
-        return 'Scissors';
-    };
+    if (randomNum === 0) {
+        return 'Rock'
+        
+    } else if (randomNum === 1) {
+        return 'Paper'
+    } else {
+         (randomNum === 2)
+        return 'Scissors'
+    }
 }
 
 console.log(getComputerChoice())
