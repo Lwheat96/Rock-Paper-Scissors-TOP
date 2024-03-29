@@ -12,11 +12,11 @@ function getComputerChoice() {
     let randomNum = Math.floor(Math.random() * 3);
     
     if (randomNum === 0) {
-        return 'Rock'
+        return 'rock'
     } if (randomNum === 1) {
-        return 'Paper'
+        return 'paper'
     } if (randomNum === 2) {
-        return 'Scissors'
+        return 'scissors'
     }
 }
 
@@ -24,24 +24,24 @@ function getComputerChoice() {
 // This is showing correctly in console.log(playRound)
 
 function playRound(playerSelection, computerSelection) {
-    if (playerSelection === 'Rock' && computerSelection === 'Rock') {
+    if (playerSelection === 'rock' && computerSelection === 'rock') {
         return 'You tied!'
     }
-    if (playerSelection === 'Rock' && computerSelection === 'Paper') {
+    if (playerSelection === 'rock' && computerSelection === 'paper') {
         return 'You lose!'
     }
-    if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
+    if (playerSelection === 'rock' && computerSelection === 'scissors') {
         return 'You Win!'
     }
 }
 
-function playGame(playRound) {
-    
+/* function playGame(playRound) {
 }
+*/
 
 // I feel like these should go to the top of my code?
 
-const playerSelection = 'Rock';
+const playerSelection = parseInt(prompt("Enter rock, paper, or scissors").toLowerCase);
 const computerSelection = getComputerChoice();
 
 console.log(playRound(playerSelection, computerSelection));
