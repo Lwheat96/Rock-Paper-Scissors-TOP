@@ -12,11 +12,9 @@ function getComputerChoice() {
     
     if (randomNum === 0) {
         return 'Rock'
-        
-    } else if (randomNum === 1) {
+    } if (randomNum === 1) {
         return 'Paper'
-    } else {
-         (randomNum === 2)
+    } if (randomNum === 2){
         return 'Scissors'
     }
 }
