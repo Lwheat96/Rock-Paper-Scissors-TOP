@@ -15,18 +15,33 @@ function getComputerChoice() {
         return 'Rock'
     } if (randomNum === 1) {
         return 'Paper'
-    } if (randomNum === 2){
+    } if (randomNum === 2) {
         return 'Scissors'
     }
 }
 
-console.log(getComputerChoice())
+// Starting the playRound() here. I didn't need a pop up? I used parseInt but that did not seem to be the direction I was supposed to go.
+// This is showing correctly in console.log(playRound)
 
-// Starting the playRound() here
-
-function playRound() {
-    const playerSelection = parseInt(prompt("Enter your choice of Rock, Paper, Scissors here! Good Luck!"));
-    const computerSelection = getComputerChoice();
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection === 'Rock' && computerSelection === 'Rock') {
+        return 'You tied!'
+    }
+    if (playerSelection === 'Rock' && computerSelection === 'Paper') {
+        return 'You lose!'
+    }
+    if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
+        return 'You Win!'
+    }
 }
 
-playRound();
+function playGame(playRound) {
+    
+}
+
+// I feel like these should go to the top of my code?
+
+const playerSelection = 'Rock';
+const computerSelection = getComputerChoice();
+
+console.log(playRound(playerSelection, computerSelection));
