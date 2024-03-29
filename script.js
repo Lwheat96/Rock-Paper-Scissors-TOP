@@ -41,7 +41,7 @@ function playRound(playerSelection, computerSelection) {
 
 // I feel like these should go to the top of my code?
 
-const playerSelection = parseInt(prompt("Enter rock, paper, or scissors").toLowerCase);
+// const playerSelection = parseInt(prompt("Enter rock, paper, or scissors").toLowerCase);
 const computerSelection = getComputerChoice();
 
-console.log(playRound(playerSelection, computerSelection));
+// console.log(playRound(playerSelection, computerSelection));
