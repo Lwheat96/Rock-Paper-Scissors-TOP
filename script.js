@@ -14,10 +14,13 @@ function getComputerChoice() {
     }
 }
 
+
+
 function playerChoice() {
-    parseInt(prompt("Choose rock, paper, or scissors.").toLowerCase);
-    return 'rock' | 'paper' | 'scissors';
+    prompt("Choose rock, paper, or scissors.");
+    return prompt();
 }
+
 // Starting the playRound() here. I didn't need a pop up? I used parseInt but that did not seem to be the direction I was supposed to go.
 // This is showing correctly in console.log(playRound)
 /* 
@@ -29,32 +32,32 @@ Scissors ties scissors.
 */
 
 function playRound(playerSelection, computerSelection) {
-    if ( playerSelection === 'rock' && computerSelection === 'rock'){
-        return "Draw!";
+    if ( playerSelection == 'rock' && computerSelection == 'rock'){
+        return 'Draw!';
     }
-    if ( playerSelection === 'paper' && computerSelection === 'rock'){
-        return "Loser!";
+    else if ( playerSelection === 'paper' && computerSelection === 'rock'){
+        return 'Loser!';
     }
-    if ( playerSelection === 'scissors' && computerSelection === 'rock'){
-        return "Win!";
+    else if ( playerSelection === 'scissors' && computerSelection === 'rock'){
+        return 'Win!';
     }
-    if ( playerSelection === 'rock' && computerSelection === 'paper'){
-        return "Loser!";
+    else if ( playerSelection === 'rock' && computerSelection === 'paper'){
+        return 'Loser!';
     }
-    if ( playerSelection === 'rock' && computerSelection === 'scissors'){
-        return "Win!";
+    else if ( playerSelection === 'rock' && computerSelection === 'scissors'){
+        return 'Win!';
     }
-    if ( playerSelection === 'paper' && computerSelection === 'paper'){
-        return "Draw!";
+    else if ( playerSelection === 'paper' && computerSelection === 'paper'){
+        return 'Draw!';
     }
-    if ( playerSelection === 'paper' && computerSelection === 'scissor'){
-        return "Loser!";
+    else if ( playerSelection === 'paper' && computerSelection === 'scissors'){
+        return 'Loser!';
     }
-    if ( playerSelection === 'scissors' && computerSelection === 'paper'){
-        return "Win!";
+    else if ( playerSelection === 'scissors' && computerSelection === 'paper'){
+        return 'Win!';
     }
-    if ( playerSelection === 'scissors' && computerSelection === 'scissors'){
-        return "Draw!";
+    else if ( playerSelection === 'scissors' && computerSelection === 'scissors'){
+        return 'Draw!';
     }
     
 }
@@ -66,7 +69,9 @@ function playRound(playerSelection, computerSelection) {
 // I feel like these should go to the top of my code?
 
 const playerSelection = playerChoice(); 
-//Commented this out to get rid of pop up everytime...
 const computerSelection = getComputerChoice();
 
+
 console.log(playRound(playerSelection, computerSelection));
+// Giving undefined when user inputs capital letters.
+// Also, it is popping up two prompts
