@@ -62,9 +62,12 @@ function playRound(playerSelection, computerSelection) {
     
 }
 
-/* function playGame(playRound) {
+/*
+function playGame(playRound) {
+    for (let i = playRound; i < 5; i++);
 }
-*/
+This doesn't work
+*/ 
 
 // I feel like these should go to the top of my code?
 
@@ -73,5 +76,6 @@ const computerSelection = getComputerChoice();
 
 
 console.log(playRound(playerSelection, computerSelection));
+console.log(playGame())
 // Giving undefined when user inputs capital letters.
 // Also, it is popping up two prompts
