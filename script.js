@@ -13,14 +13,6 @@ function getComputerChoice() {
         return 'scissors'
     }
 }
-
-
-
-function playerChoice() {
-    prompt("Choose rock, paper, or scissors.");
-    return prompt();
-}
-
 // Starting the playRound() here. I didn't need a pop up? I used parseInt but that did not seem to be the direction I was supposed to go.
 // This is showing correctly in console.log(playRound)
 /* 
@@ -71,11 +63,11 @@ This doesn't work
 
 // I feel like these should go to the top of my code?
 
-const playerSelection = playerChoice(); 
+const playerSelection = prompt("Choose rock, paper, or scissors.").toLowerCase();
 const computerSelection = getComputerChoice();
 
 
 console.log(playRound(playerSelection, computerSelection));
-console.log(playGame())
+// console.log(playGame())
 // Giving undefined when user inputs capital letters.
 // Also, it is popping up two prompts
