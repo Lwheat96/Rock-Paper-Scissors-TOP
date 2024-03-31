@@ -28,25 +28,25 @@ function playRound(playerSelection, computerSelection) {
         return 'Draw!';
     }
     else if ( playerSelection === 'paper' && computerSelection === 'rock'){
-        return 'Loser!';
+        return 'You lose!';
     }
     else if ( playerSelection === 'scissors' && computerSelection === 'rock'){
-        return 'Win!';
+        return 'You win!';
     }
     else if ( playerSelection === 'rock' && computerSelection === 'paper'){
-        return 'Loser!';
+        return 'You lose!';
     }
     else if ( playerSelection === 'rock' && computerSelection === 'scissors'){
-        return 'Win!';
+        return 'You win!';
     }
     else if ( playerSelection === 'paper' && computerSelection === 'paper'){
         return 'Draw!';
     }
     else if ( playerSelection === 'paper' && computerSelection === 'scissors'){
-        return 'Loser!';
+        return 'You lose!';
     }
     else if ( playerSelection === 'scissors' && computerSelection === 'paper'){
-        return 'Win!';
+        return 'You win!';
     }
     else if ( playerSelection === 'scissors' && computerSelection === 'scissors'){
         return 'Draw!';
@@ -54,20 +54,52 @@ function playRound(playerSelection, computerSelection) {
     
 }
 
-/*
-function playGame(playRound) {
-    for (let i = playRound; i < 5; i++);
+
+
+// I think I can equal pS and cS to 1 and then count it to 3 to display the winner of the game?
+function playGame() {
+    if ( playerSelection == 'rock' && computerSelection == 'rock'){
+        return 'Draw!';
+    }
+    else if ( playerSelection === 'paper' && computerSelection === 'rock'){
+        return 'You lose!';
+    }
+    else if ( playerSelection === 'scissors' && computerSelection === 'rock'){
+        return 'You win!';
+    }
+    else if ( playerSelection === 'rock' && computerSelection === 'paper'){
+        return 'You lose!';
+    }
+    else if ( playerSelection === 'rock' && computerSelection === 'scissors'){
+        return 'You win!';
+    }
+    else if ( playerSelection === 'paper' && computerSelection === 'paper'){
+        return 'Draw!';
+    }
+    else if ( playerSelection === 'paper' && computerSelection === 'scissors'){
+        return 'You lose!';
+    }
+    else if ( playerSelection === 'scissors' && computerSelection === 'paper'){
+        return 'You win!';
+    }
+    else if ( playerSelection === 'scissors' && computerSelection === 'scissors'){
+        return 'Draw!';
+    }
+
+  return (playRound() * 5);
+
 }
-This doesn't work
-*/ 
+
+
 
 // I feel like these should go to the top of my code?
 
-const playerSelection = prompt("Choose rock, paper, or scissors.").toLowerCase();
+const playerSelection = prompt('Choose rock, paper, or scissors.').toLowerCase();
 const computerSelection = getComputerChoice();
 
-
-console.log(playRound(playerSelection, computerSelection));
+console.log(playerSelection);
+console.log(computerSelection);
+console.log(playGame(playRound));
 // console.log(playGame())
 // Giving undefined when user inputs capital letters.
 // Also, it is popping up two prompts
