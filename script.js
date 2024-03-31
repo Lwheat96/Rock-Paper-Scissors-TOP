@@ -4,7 +4,8 @@
 const a = 'You win!';
 const b = 'You lose!';
 const c = 'Draw!';
-// const playerScore = 
+// const playerScore = i;
+// const computerScore = x;
 function getComputerChoice() {
     let randomNum = Math.floor(Math.random() * 3);
     
@@ -75,7 +76,4 @@ const computerSelection = getComputerChoice();
 console.log(playerSelection);
 console.log(computerSelection);
 console.log(playGame());
-console.log(playerScore);
-// console.log(playGame())
-// Giving undefined when user inputs capital letters.
-// Also, it is popping up two prompts
+//console.log(playerScore);
