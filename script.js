@@ -4,8 +4,11 @@
 const a = 'You win!';
 const b = 'You lose!';
 const c = 'Draw!';
+const playerSelection = prompt('Choose rock, paper, or scissors.').toLowerCase();
+const computerSelection = getComputerChoice();
 let playerScore = 0;
 let computerScore = 0;
+let draw = 0;
 function getComputerChoice() {
     let randomNum = Math.floor(Math.random() * 3);
     
@@ -63,17 +66,17 @@ function playRound(playerSelection, computerSelection) {
 // I think I can equal pS and cS to 1 and then count it to 3 to display the winner of the game?
 function playGame() {
     if (playRound() === a) {
-        playerScore =+ 1
+        ++playerScore
     } else {
 
     }
     if(playRound() === b) {
-        computerScore  =+ 1
+        ++computerScore
     } else {
 
     }
     if(playRound() === c) {
-        playRound()
+        draw++
     }
 
     return playRound(playerSelection, computerSelection);
@@ -84,11 +87,9 @@ function playGame() {
 
 // I feel like these should go to the top of my code?
 
-const playerSelection = prompt('Choose rock, paper, or scissors.').toLowerCase();
-const computerSelection = getComputerChoice();
-//const playRoundFive = playRound();
+
 console.log(playerSelection);
 console.log(computerSelection);
-console.log(playGame());
+console.log(playGame(playRound));
 console.log(playerScore);
 console.log(computerScore);
