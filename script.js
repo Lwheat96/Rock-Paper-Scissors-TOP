@@ -4,8 +4,8 @@
 const a = 'You win!';
 const b = 'You lose!';
 const c = 'Draw!';
-// const playerScore = i;
-// const computerScore = x;
+let playerScore = 0;
+let computerScore = 0;
 function getComputerChoice() {
     let randomNum = Math.floor(Math.random() * 3);
     
@@ -62,6 +62,20 @@ function playRound(playerSelection, computerSelection) {
 
 // I think I can equal pS and cS to 1 and then count it to 3 to display the winner of the game?
 function playGame() {
+    if (playRound() === a) {
+        playerScore =+ 1
+    } else {
+
+    }
+    if(playRound() === b) {
+        computerScore  =+ 1
+    } else {
+
+    }
+    if(playRound() === c) {
+        playRound()
+    }
+
     return playRound(playerSelection, computerSelection);
 
 }
@@ -76,4 +90,5 @@ const computerSelection = getComputerChoice();
 console.log(playerSelection);
 console.log(computerSelection);
 console.log(playGame());
-//console.log(playerScore);
+console.log(playerScore);
+console.log(computerScore);
