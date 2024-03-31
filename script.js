@@ -1,7 +1,10 @@
 // Tried a lot of things at this point. Do I need a param? Do I need to assign Rock / Paper / Scissors to a value?
 // Thank you guys this part is working now!!! 
 // Made them all if statements!
-
+const a = 'You win!';
+const b = 'You lose!';
+const c = 'Draw!';
+// const playerScore = 
 function getComputerChoice() {
     let randomNum = Math.floor(Math.random() * 3);
     
@@ -25,31 +28,31 @@ Scissors ties scissors.
 
 function playRound(playerSelection, computerSelection) {
     if ( playerSelection == 'rock' && computerSelection == 'rock'){
-        return 'Draw!';
+        return c;
     }
     else if ( playerSelection === 'paper' && computerSelection === 'rock'){
-        return 'You lose!';
+        return b;
     }
     else if ( playerSelection === 'scissors' && computerSelection === 'rock'){
-        return 'You win!';
+        return a;
     }
     else if ( playerSelection === 'rock' && computerSelection === 'paper'){
-        return 'You lose!';
+        return b;
     }
     else if ( playerSelection === 'rock' && computerSelection === 'scissors'){
-        return 'You win!';
+        return a;
     }
     else if ( playerSelection === 'paper' && computerSelection === 'paper'){
-        return 'Draw!';
+        return c;
     }
     else if ( playerSelection === 'paper' && computerSelection === 'scissors'){
-        return 'You lose!';
+        return b;
     }
     else if ( playerSelection === 'scissors' && computerSelection === 'paper'){
-        return 'You win!';
+        return a;
     }
     else if ( playerSelection === 'scissors' && computerSelection === 'scissors'){
-        return 'Draw!';
+        return c;
     }
     
 }
@@ -58,35 +61,7 @@ function playRound(playerSelection, computerSelection) {
 
 // I think I can equal pS and cS to 1 and then count it to 3 to display the winner of the game?
 function playGame() {
-    if ( playerSelection == 'rock' && computerSelection == 'rock'){
-        return 'Draw!';
-    }
-    else if ( playerSelection === 'paper' && computerSelection === 'rock'){
-        return 'You lose!';
-    }
-    else if ( playerSelection === 'scissors' && computerSelection === 'rock'){
-        return 'You win!';
-    }
-    else if ( playerSelection === 'rock' && computerSelection === 'paper'){
-        return 'You lose!';
-    }
-    else if ( playerSelection === 'rock' && computerSelection === 'scissors'){
-        return 'You win!';
-    }
-    else if ( playerSelection === 'paper' && computerSelection === 'paper'){
-        return 'Draw!';
-    }
-    else if ( playerSelection === 'paper' && computerSelection === 'scissors'){
-        return 'You lose!';
-    }
-    else if ( playerSelection === 'scissors' && computerSelection === 'paper'){
-        return 'You win!';
-    }
-    else if ( playerSelection === 'scissors' && computerSelection === 'scissors'){
-        return 'Draw!';
-    }
-
-  return (playRound() * 5);
+    return playRound(playerSelection, computerSelection);
 
 }
 
@@ -96,10 +71,11 @@ function playGame() {
 
 const playerSelection = prompt('Choose rock, paper, or scissors.').toLowerCase();
 const computerSelection = getComputerChoice();
-
+//const playRoundFive = playRound();
 console.log(playerSelection);
 console.log(computerSelection);
-console.log(playGame(playRound));
+console.log(playGame());
+console.log(playerScore);
 // console.log(playGame())
 // Giving undefined when user inputs capital letters.
 // Also, it is popping up two prompts
