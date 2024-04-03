@@ -1,95 +1,65 @@
-// Tried a lot of things at this point. Do I need a param? Do I need to assign Rock / Paper / Scissors to a value?
-// Thank you guys this part is working now!!! 
-// Made them all if statements!
-const a = 'You win!';
-const b = 'You lose!';
-const c = 'Draw!';
-const playerSelection = prompt('Choose rock, paper, or scissors.').toLowerCase();
-const computerSelection = getComputerChoice();
+// Finished coding in replit
 let playerScore = 0;
 let computerScore = 0;
 let draw = 0;
-function getComputerChoice() {
-    let randomNum = Math.floor(Math.random() * 3);
-    
-    if (randomNum === 0) {
-        return 'rock'
-    } if (randomNum === 1) {
-        return 'paper'
-    } if (randomNum === 2) {
-        return 'scissors'
-    }
-}
-// Starting the playRound() here. I didn't need a pop up? I used parseInt but that did not seem to be the direction I was supposed to go.
-// This is showing correctly in console.log(playRound)
-/* 
-It is correct but it isn't logically determining a winner. How do I set the params
-for each iteration? 
-Rock beats scissors, loses to paper, draws rock. 
-Paper loses to scissors, ties paper. 
-Scissors ties scissors.
-*/
+let round = 0;
+let number = 0;
+const gameArray = [playRound(), playRound(), playRound(), playRound(), playRound()]
 
-function playRound(playerSelection, computerSelection) {
-    if ( playerSelection == 'rock' && computerSelection == 'rock'){
-        return c;
-    }
-    else if ( playerSelection === 'paper' && computerSelection === 'rock'){
-        return b;
-    }
-    else if ( playerSelection === 'scissors' && computerSelection === 'rock'){
-        return a;
-    }
-    else if ( playerSelection === 'rock' && computerSelection === 'paper'){
-        return b;
-    }
-    else if ( playerSelection === 'rock' && computerSelection === 'scissors'){
-        return a;
-    }
-    else if ( playerSelection === 'paper' && computerSelection === 'paper'){
-        return c;
-    }
-    else if ( playerSelection === 'paper' && computerSelection === 'scissors'){
-        return b;
-    }
-    else if ( playerSelection === 'scissors' && computerSelection === 'paper'){
-        return a;
-    }
-    else if ( playerSelection === 'scissors' && computerSelection === 'scissors'){
-        return c;
-    }
-    
-}
+function computerChoice() {
+  let randomNum = Math.floor(Math.random() * 3);
+  if (randomNum === 0) {
+    return "rock"
+  } else if (randomNum === 1) {
+    return "paper"
+  }
+  else if (randomNum === 2) {
+    return "scissors"
+  }
+  return randomNum;
+};
 
+function playRound() {
+  let computerSelection = computerChoice();
+  let playerSelection = prompt("What do you think? rock, paper, or scissors?").toLowerCase();
+  if (playerSelection === computerSelection) {
+    draw++
+    round++
+    console.log(playerSelection);
+    console.log(computerSelection);
+    console.log("Your score: " + playerScore + ".\n Computer score: " + computerScore + ".\n draws: " + draw + ".\n Round: " + round + ".");
+  } else if (playerSelection === "rock" && computerSelection === "scissors"
+    || playerSelection === "paper" && computerSelection === "rock"
+    || playerSelection === "scissors" && computerSelection === "paper") {
+    console.log(playerSelection);
+    console.log(computerSelection);
+    playerScore++
+    round++
+    console.log("Your score: " + playerScore + ".\n Computer score: " + computerScore + ".\n draws: " + draw + ".\n Round: " + round + ".");
 
+  } else if (playerSelection === "scissors" && computerSelection === "rock"
+    || playerSelection === "rock" && computerSelection === "paper"
+    || playerSelection === "paper" && computerSelection === "scissors") {
+    computerScore++
+    round++
+    console.log(playerSelection);
+    console.log(computerSelection);
+    console.log("Your score: " + playerScore + ".\n Computer score: " + computerScore + ".\n draws: " + draw + ".\n Round: " + round + ".");
 
-// I think I can equal pS and cS to 1 and then count it to 3 to display the winner of the game?
+  }
+
+  return playerSelection, computerSelection, playerScore, computerScore, round;
+};
+
+// Can't get this to play each round individually
 function playGame() {
-    if (playRound() === a) {
-        ++playerScore
-    } else {
-
-    }
-    if(playRound() === b) {
-        ++computerScore
-    } else {
-
-    }
-    if(playRound() === c) {
-        draw++
-    }
-
-    return playRound(playerSelection, computerSelection);
-
+  gameArray
+  if (computerScore > playerScore) {
+    console.log("Computer wins!")
+  } else if (playerScore > computerScore) {
+    console.log("Player wins!")
+  } else if (playerScore === computerScore || draw > playerScore && computerScore)
+    console.log("It's a draw!")
 }
 
-
-
-// I feel like these should go to the top of my code?
-
-
-console.log(playerSelection);
-console.log(computerSelection);
-console.log(playGame(playRound));
-console.log(playerScore);
-console.log(computerScore);
+playGame();
